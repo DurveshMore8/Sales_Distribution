@@ -6,24 +6,25 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-    private static Scene scene;
+    public static Scene scene;
 
     @Override
     public void start(Stage stage) throws Exception
     {
         scene = new Scene(LoadFXML("Login"));
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
 
-    static void setRoot(String fxml) throws Exception
+    public static void setRoot(String fxml) throws Exception
     {
         scene.setRoot(LoadFXML(fxml));
     }
 
-    private static Parent LoadFXML(String fxml) throws Exception
+    public static Parent LoadFXML(String fxml) throws Exception
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml+".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/"+fxml+".fxml"));
         return fxmlLoader.load();
     }
 

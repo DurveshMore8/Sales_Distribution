@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="922.0" spacing="15.0" stylesheets="@../css/Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.Login_Controller">
+   <children>
+      <VBox alignment="CENTER" prefHeight="226.0" prefWidth="922.0" spacing="15.0">
+         <children>
+            <Label text="Select Type" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
+               <children>
+                  <RadioButton id="rbManager" fx:id="rbManager" mnemonicParsing="false" onAction="#gotoManager" prefHeight="46.0" prefWidth="151.0" text="Manager">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Type" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="rbEmployee" fx:id="rbEmployee" mnemonicParsing="false" onAction="#gotoEmployee" prefHeight="46.0" prefWidth="158.0" text="Employee" toggleGroup="$Type" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

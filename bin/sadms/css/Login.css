@@ -1,0 +1,22 @@
+.root 
+{
+    -fx-background-color:  #252525;
+}
+.label
+{
+    -fx-text-fill: white;
+    -fx-font-family: Utsaah;
+    -fx-font-weight: bold;
+    -fx-font-size: 40px;
+    
+}
+.radio-button
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 24px;
+}
+.radio-button .radio
+{
+    -fx-border-radius: 10px;
+}
