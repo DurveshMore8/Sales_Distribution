@@ -2,6 +2,17 @@
 {
     -fx-background-color:  #252525;
 }
+#navbar
+{
+    -fx-background-color: #7a0bc0;
+}
+#navbar .button
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 16px;
+    -fx-background-color: #252525;
+}
 #title
 {
     -fx-text-fill: white;
