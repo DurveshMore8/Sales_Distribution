@@ -21,6 +21,7 @@ public class ManagerLogin
     @FXML TextField tfManagerGmail;
     @FXML TextField tfManagerPassword;
     @FXML Label ErrorMessage;
+    static Document value;
 
     @FXML void gotoEmployee(ActionEvent event) throws Exception
     {
@@ -34,7 +35,7 @@ public class ManagerLogin
         MongoCollection<Document> collection = database.getCollection("manager_login");
 
         Document query = new Document("ManagerName",tfManagerName.getText()).append("ManagerGmail", tfManagerGmail.getText()).append("ManagerPassword", tfManagerPassword.getText());
-        Document value = collection.find(query).first();
+        value = collection.find(query).first();
         client.close();
         if(value == null)
         {
