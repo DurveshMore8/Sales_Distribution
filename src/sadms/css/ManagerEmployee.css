@@ -1,0 +1,56 @@
+.root 
+{
+    -fx-background-color:  #252525;
+}
+#navbar
+{
+    -fx-background-color: #7a0bc0;
+}
+#navbar .button
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 16px;
+    -fx-background-color: #252525;
+}
+#title
+{
+    -fx-text-fill: white;
+    -fx-font-family: Utsaah;
+    -fx-font-weight: bold;
+    -fx-font-size: 40px;   
+}
+.label
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 24px;
+}
+.radio-button
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 24px;
+}
+.button
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 16px;
+    -fx-background-color: #7a0bc0;
+}
+.text-field
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-background-color: #7a0bc0;
+    -fx-font-size: 16px;
+}
+#navbar #employeebtn
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: #7a0bc0;
+}

@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import sadms.Main;
 
-public class ManagerDashboard {
+public class ManagerEmployee {
     @FXML Label manager;
 
     public void initialize()
@@ -15,17 +15,5 @@ public class ManagerDashboard {
     @FXML void Log_Out(ActionEvent event) throws Exception
     {
         Main.setRoot("ManagerLogin");
-    }
-    @FXML void ProductClicked(ActionEvent event) throws Exception
-    {
-        Main.setRoot("ManagerProduct");
-    }
-    @FXML void ShopClicked(ActionEvent event) throws Exception
-    {
-        Main.setRoot("ManagerShop");
-    }
-    @FXML void EmployeeClicked(ActionEvent event) throws Exception
-    {
-        Main.setRoot("ManagerEmployee");
     }
 }

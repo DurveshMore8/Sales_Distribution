@@ -17,7 +17,7 @@
       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <VBox fx:id="navbar" alignment="CENTER" prefHeight="544.0" prefWidth="220.0" spacing="60.0">
+      <VBox fx:id="navbar" alignment="CENTER" prefHeight="544.0" prefWidth="220.0" spacing="120.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -25,9 +25,9 @@
             <Label id="manager" fx:id="manager" />
             <VBox alignment="CENTER" prefHeight="350.0" prefWidth="215.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Product" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Shop" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Employee" />
+                  <Button mnemonicParsing="false" onAction="#ProductClicked" prefHeight="50.0" prefWidth="220.0" text="Product" />
+                  <Button mnemonicParsing="false" onAction="#ShopClicked" prefHeight="50.0" prefWidth="220.0" text="Shop" />
+                  <Button mnemonicParsing="false" onAction="#EmployeeClicked" prefHeight="50.0" prefWidth="220.0" text="Employee" />
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sales" />
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Stock" />
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Chart and Graph" />
@@ -35,6 +35,9 @@
                </children>
             </VBox>
          </children>
+         <padding>
+            <Insets top="-50.0" />
+         </padding>
       </VBox>
       <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" GridPane.columnIndex="1">
          <children>
