@@ -16,4 +16,24 @@ public class ManagerProduct {
     {
         Main.setRoot("ManagerLogin");
     }
+    @FXML void ShopClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerShop");
+    }
+    @FXML void EmployeeClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerEmployee");
+    }
+    @FXML void SalesClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerSales");
+    }
+    @FXML void StockClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerStock");
+    }
+    @FXML void ChartGraphClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerChartGraph");
+    }
 }

@@ -25,12 +25,12 @@
             <Label id="manager" fx:id="manager" />
             <VBox alignment="CENTER" prefHeight="350.0" prefWidth="215.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Product" />
+                  <Button mnemonicParsing="false" onAction="#ProductClicked" prefHeight="50.0" prefWidth="220.0" text="Product" />
                   <Button fx:id="shopbtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Shop" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Employee" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sales" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Stock" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Chart and Graph" />
+                  <Button mnemonicParsing="false" onAction="#EmployeeClicked" prefHeight="50.0" prefWidth="220.0" text="Employee" />
+                  <Button mnemonicParsing="false" onAction="#SalesClicked" prefHeight="50.0" prefWidth="220.0" text="Sales" />
+                  <Button mnemonicParsing="false" onAction="#StockClicked" prefHeight="50.0" prefWidth="220.0" text="Stock" />
+                  <Button mnemonicParsing="false" onAction="#ChartGraphClicked" prefHeight="50.0" prefWidth="220.0" text="Chart and Graph" />
                   <Button mnemonicParsing="false" onAction="#Log_Out" prefHeight="50.0" prefWidth="215.0" text="Log Out" />
                </children>
             </VBox>
