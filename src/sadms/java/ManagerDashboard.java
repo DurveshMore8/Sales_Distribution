@@ -28,4 +28,16 @@ public class ManagerDashboard {
     {
         Main.setRoot("ManagerEmployee");
     }
+    @FXML void SalesClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerSales");
+    }
+    @FXML void StockClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerStock");
+    }
+    @FXML void ChartGraphClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerChartGraph");
+    }
 }

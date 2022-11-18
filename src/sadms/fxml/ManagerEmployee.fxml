@@ -41,7 +41,7 @@
       </VBox>
       <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" GridPane.columnIndex="1">
          <children>
-            <Label fx:id="title" text="Manager: Dashboard" />
+            <Label fx:id="title" text="Manager: Employee" />
          </children>
          <padding>
             <Insets top="10.0" />
