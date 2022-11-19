@@ -5,13 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-
 import org.bson.Document;
-
-import com.mongodb.*;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-
 import sadms.Main;
 
 public class ManagerLogin
@@ -29,14 +23,11 @@ public class ManagerLogin
     }
     @FXML  void LogInClicked(ActionEvent event) throws Exception
     {
-        MongoClientURI uri = new MongoClientURI("mongodb://localhost:27017");
-        MongoClient client = new MongoClient(uri);
-        MongoDatabase database = client.getDatabase("sadms");
-        MongoCollection<Document> collection = database.getCollection("manager_login");
+        Main.openCon("managerlogin");
 
         Document query = new Document("ManagerName",tfManagerName.getText()).append("ManagerGmail", tfManagerGmail.getText()).append("ManagerPassword", tfManagerPassword.getText());
-        value = collection.find(query).first();
-        client.close();
+        value = Main.collection.find(query).first();
+        Main.closeCon();
         if(value == null)
         {
             ErrorMessage.setText("* Wrong Credentials Entered *");

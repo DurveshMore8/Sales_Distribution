@@ -72,13 +72,16 @@ public class ManagerProductAdd {
                 ErrorMessage.setText("** Enter Prices in Integer Only **");
                 ErrorMessage.setVisible(true);
             }
+            finally
+            {
+                Main.closeCon();
+            }
         }
         else
         {
             ErrorMessage.setText("** Product of this Id already exists **");
             ErrorMessage.setVisible(true);
         }
-        Main.closeCon();
     }
     @FXML void ClearClicked()
     {
