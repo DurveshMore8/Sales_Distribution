@@ -23,8 +23,8 @@ public class ManagerProductUpdate {
         Document value = Main.collection.find(query).first();
         ProductId.setText(value.getString("ProductId"));
         ProductName.setText(value.getString("ProductName"));
-        CostPrice.setText(value.getString("CostPrice"));
-        SellingPrice.setText(value.getString("SellingPrice"));
+        CostPrice.setText(value.getInteger("CostPrice").toString());
+        SellingPrice.setText(value.getInteger("SellingPrice").toString());
         Description.setText(value.getString("Description"));
         Main.closeCon();
     }
@@ -64,10 +64,22 @@ public class ManagerProductUpdate {
         {
             ErrorMessage.setVisible(false);
             Main.openCon("product");
-            Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("CostPrice",CostPrice.getText()));
-            Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("SellingPrice",SellingPrice.getText()));
-            Main.closeCon();
-            Main.setRoot("ManagerProduct");
+            try
+            {
+                Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("CostPrice",Integer.parseInt(CostPrice.getText())));
+                Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("SellingPrice",Integer.parseInt(SellingPrice.getText())));
+                Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("ManagerName",manager.getText()));
+                Main.setRoot("ManagerProduct");
+            }
+            catch(Exception e)
+            {
+                ErrorMessage.setText("** Enter Prices in Integer Only **");
+                ErrorMessage.setVisible(true);
+            }
+            finally
+            {
+                Main.closeCon();
+            }
         }
     }
     @FXML void ClearClicked()

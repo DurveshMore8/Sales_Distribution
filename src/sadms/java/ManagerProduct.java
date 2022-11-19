@@ -64,8 +64,8 @@ public class ManagerProduct {
             Details.setVisible(true);
             ErrorMessage.setVisible(false);
             ProductName.setText(value.getString("ProductName"));
-            SellingPrice.setText(value.getString("SellingPrice"));
-            CostPrice.setText(value.getString("CostPrice"));
+            SellingPrice.setText(value.getInteger("SellingPrice").toString());
+            CostPrice.setText(value.getInteger("CostPrice").toString());
             Description.setText(value.getString("Description"));
             UpdateProduct.setDisable(false);
             DeleteProduct.setDisable(false);

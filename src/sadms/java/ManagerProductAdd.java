@@ -56,9 +56,17 @@ public class ManagerProductAdd {
         Document value = Main.collection.find(query).first();
         if(value == null)
         {
-            query.append("CostPrice",CostPrice.getText()).append("SellingPrice",SellingPrice.getText()).append("Description",Description.getText()).append("ManagerName",manager.getText());
-            Main.collection.insertOne(query);
-            Main.setRoot("ManagerProduct");
+            try
+            {
+                query.append("CostPrice",Integer.parseInt(CostPrice.getText())).append("SellingPrice",Integer.parseInt(SellingPrice.getText())).append("Description",Description.getText()).append("ManagerName",manager.getText());
+                Main.collection.insertOne(query);
+                Main.setRoot("ManagerProduct");
+            }
+            catch(Exception e)
+            {
+                ErrorMessage.setText("** Enter Prices in Integer Only **");
+                ErrorMessage.setVisible(true);
+            }
         }
         else
         {
