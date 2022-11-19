@@ -16,9 +16,17 @@ public class ManagerProduct {
     @FXML TextField ProductId, ProductName, SellingPrice, CostPrice, Description;
     @FXML Button AddProduct, UpdateProduct, DeleteProduct;
     static String sendProductId;
+    static String sendmessage;
     public void initialize()
     {
+        ErrorMessage.setVisible(false);
         manager.setText(ManagerLogin.value.getString("ManagerName"));
+        if(sendmessage != "")
+        {
+            ErrorMessage.setText(sendmessage);
+            ErrorMessage.setVisible(true);
+            sendmessage = "";
+        }
     }
     @FXML void Log_Out(ActionEvent event) throws Exception
     {

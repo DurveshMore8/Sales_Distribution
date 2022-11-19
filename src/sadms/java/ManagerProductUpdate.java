@@ -32,6 +32,10 @@ public class ManagerProductUpdate {
     {
         Main.setRoot("ManagerLogin");
     }
+    @FXML void ProductClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerProduct");
+    }
     @FXML void ShopClicked(ActionEvent event) throws Exception
     {
         Main.setRoot("ManagerShop");
@@ -69,6 +73,7 @@ public class ManagerProductUpdate {
                 Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("CostPrice",Integer.parseInt(CostPrice.getText())));
                 Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("SellingPrice",Integer.parseInt(SellingPrice.getText())));
                 Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("ManagerName",manager.getText()));
+                ManagerProduct.sendmessage = "** Product Updated Successfully **";
                 Main.setRoot("ManagerProduct");
             }
             catch(Exception e)

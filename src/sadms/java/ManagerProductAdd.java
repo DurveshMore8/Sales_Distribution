@@ -20,6 +20,10 @@ public class ManagerProductAdd {
     {
         Main.setRoot("ManagerLogin");
     }
+    @FXML void ProductClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerProduct");
+    }
     @FXML void ShopClicked(ActionEvent event) throws Exception
     {
         Main.setRoot("ManagerShop");
@@ -60,6 +64,7 @@ public class ManagerProductAdd {
             {
                 query.append("CostPrice",Integer.parseInt(CostPrice.getText())).append("SellingPrice",Integer.parseInt(SellingPrice.getText())).append("Description",Description.getText()).append("ManagerName",manager.getText());
                 Main.collection.insertOne(query);
+                ManagerProduct.sendmessage = "** Product Added Successfully **";
                 Main.setRoot("ManagerProduct");
             }
             catch(Exception e)
