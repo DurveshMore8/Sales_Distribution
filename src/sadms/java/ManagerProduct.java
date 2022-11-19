@@ -2,10 +2,6 @@ package sadms.java;
 
 import org.bson.Document;
 
-import com.mongodb.*;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,18 +15,7 @@ public class ManagerProduct {
     @FXML Label manager, ErrorMessage;
     @FXML TextField ProductId, ProductName, SellingPrice, CostPrice, Description;
     @FXML Button AddProduct, UpdateProduct, DeleteProduct;
-    Document value;
-
-    public ManagerProduct()
-    {
-        MongoClientURI uri = new MongoClientURI("mongodb://localhost:27017");
-        MongoClient client = new MongoClient(uri);
-        MongoDatabase database = client.getDatabase("sadms");
-        MongoCollection<Document> collection = database.getCollection("Product");
-        Document query = new Document("ProductId","Nex123");
-        value = collection.find(query).first();
-        client.close();
-    }
+    static String sendProductId;
     public void initialize()
     {
         manager.setText(ManagerLogin.value.getString("ManagerName"));
@@ -59,26 +44,59 @@ public class ManagerProduct {
     {
         Main.setRoot("ManagerChartGraph");
     }
+
+    //Retrive data from database
     @FXML void ProductIdEntered(ActionEvent event) throws Exception
     {
-        if(value.getString("ProductId").equals(ProductId.getText()))
+        Main.openCon("product");
+        Document query = new Document("ProductId", ProductId.getText());
+        Document value = Main.collection.find(query).first();
+        if(value == null)
+        {
+            Details.setVisible(false);
+            ErrorMessage.setText("** No Product Available **");
+            ErrorMessage.setVisible(true);
+            UpdateProduct.setDisable(true);
+            DeleteProduct.setDisable(true);   
+        }
+        else
         {
             Details.setVisible(true);
             ErrorMessage.setVisible(false);
             ProductName.setText(value.getString("ProductName"));
-            SellingPrice.setText(value.getInteger("SellingPrice").toString());
-            CostPrice.setText(value.getInteger("CostPrice").toString());
-            AddProduct.setVisible(false);
-            UpdateProduct.setVisible(true);
-            DeleteProduct.setVisible(true);
+            SellingPrice.setText(value.getString("SellingPrice"));
+            CostPrice.setText(value.getString("CostPrice"));
+            Description.setText(value.getString("Description"));
+            UpdateProduct.setDisable(false);
+            DeleteProduct.setDisable(false);
+            sendProductId = ProductId.getText();
         }
-        else
-        {
-            Details.setVisible(false);
-            ErrorMessage.setVisible(true);
-            AddProduct.setVisible(true);
-            UpdateProduct.setVisible(false);
-            DeleteProduct.setVisible(false);
-        }
+        Main.closeCon();
+    }
+
+    //Add product to database
+    @FXML void AddProductClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerProductAdd");
+    }
+    //Update product to database
+    @FXML void UpdateProductClicked(ActionEvent event) throws Exception
+    {
+        Main.setRoot("ManagerProductUpdate");
+    }
+    //Delete product to database
+    @FXML void DeleteProductClicked(ActionEvent evetn) throws Exception
+    {
+        Main.openCon("product");
+        Document query = new Document("ProductId",ProductId.getText());
+        Main.collection.deleteOne(query);
+        Details.setVisible(false);
+        ErrorMessage.setText("** Product Deleted **");
+        UpdateProduct.setDisable(true);;
+        DeleteProduct.setDisable(true);
+        AddProduct.setVisible(true);
+        ProductId.setText("");
+        ErrorMessage.setVisible(true);
+        Main.closeCon();
     }
 }

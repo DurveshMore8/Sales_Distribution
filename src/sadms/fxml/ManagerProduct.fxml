@@ -50,8 +50,15 @@
                   <TextField fx:id="ProductId" onAction="#ProductIdEntered" prefHeight="37.0" prefWidth="266.0" promptText="abc123" />
                </children>
             </HBox>
+            <HBox alignment="CENTER" prefHeight="69.0" prefWidth="682.0" spacing="70.0">
+               <children>
+                  <Button fx:id="AddProduct" mnemonicParsing="false" onAction="#AddProductClicked" prefWidth="80.0" text="Add" />
+                  <Button fx:id="UpdateProduct" disable="true" mnemonicParsing="false" onAction="#UpdateProductClicked" prefWidth="80.0" text="Update" />
+                  <Button fx:id="DeleteProduct" disable="true" mnemonicParsing="false" onAction="#DeleteProductClicked" prefWidth="80.0" text="Delete" />
+               </children>
+            </HBox>
             <Label fx:id="ErrorMessage" text="** Product Not Available **" visible="false" />
-            <GridPane fx:id="Details" prefHeight="118.0" prefWidth="682.0" visible="false">
+            <GridPane fx:id="Details" prefHeight="154.0" prefWidth="682.0" visible="false">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -61,25 +68,25 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label text="Product Name:" />
                         <TextField fx:id="ProductName" editable="false" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
                      <children>
                         <Label text="Selling Price:" />
                         <TextField fx:id="SellingPrice" editable="false" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
                      <children>
                         <Label text="Cost Price:" />
                         <TextField fx:id="CostPrice" editable="false" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label text="Description:" />
                         <TextField fx:id="Description" editable="false" />
@@ -87,13 +94,6 @@
                   </HBox>
                </children>
             </GridPane>
-            <HBox alignment="CENTER" prefHeight="69.0" prefWidth="682.0" spacing="70.0">
-               <children>
-                  <Button fx:id="AddProduct" mnemonicParsing="false" prefWidth="80.0" text="Add" />
-                  <Button fx:id="UpdateProduct" mnemonicParsing="false" prefWidth="80.0" text="Update" visible="false" />
-                  <Button fx:id="DeleteProduct" mnemonicParsing="false" prefWidth="80.0" text="Delete" visible="false" />
-               </children>
-            </HBox>
          </children>
          <padding>
             <Insets top="10.0" />

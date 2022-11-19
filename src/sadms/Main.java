@@ -5,9 +5,28 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import org.bson.Document;
+
+import com.mongodb.*;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
 public class Main extends Application {
     public static Scene scene;
+    static MongoClient client;
+    public static MongoCollection<Document> collection;
 
+    public static void openCon(String col)
+    {
+        MongoClientURI uri = new MongoClientURI("mongodb://localhost:27017");
+        client = new MongoClient(uri);
+        MongoDatabase database = client.getDatabase("sadms");
+        collection = database.getCollection(col);
+    }
+    public static void closeCon()
+    {
+        client.close();
+    }
     @Override
     public void start(Stage stage) throws Exception
     {
