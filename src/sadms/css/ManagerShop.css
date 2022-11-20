@@ -54,3 +54,15 @@
     -fx-font-weight: bold;
     -fx-background-color: #7a0bc0;
 }
+#Details .label
+{
+    -fx-font-size: 16px;
+}
+#Details .text-field
+{
+    -fx-font-size: 14px;
+}
+#ErrorMessage
+{
+    -fx-font-size: 14px;
+}

@@ -5,9 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sadms.Main;
 
-public class ManagerProductAdd {
+public class ManagerShopAdd {
     @FXML Label manager,ErrorMessage;
-    @FXML TextField ProductId, ProductName, CostPrice, SellingPrice, Description;
+    @FXML TextField ShopId, Location, City, State, Pincode;
 
     public void initialize()
     {
@@ -42,31 +42,30 @@ public class ManagerProductAdd {
         Main.setRoot("ManagerChartGraph");
     }
 
-    //Add Query
     @FXML void AddClicked() throws Exception
-    {
+    {  
         ErrorMessage.setVisible(false);
-        if(ProductId.getText().equals("") || ProductName.getText().equals("") || CostPrice.getText().equals("") || SellingPrice.getText().equals("") || Description.getText().equals(""))
+        if(ShopId.getText().equals("") || Location.getText().equals("") || City.getText().equals("") || State.getText().equals("") || Pincode.getText().equals(""))
         {
             ErrorMessage.setText("** Fill all Text-Fields **");
             ErrorMessage.setVisible(true);
             return;
         }
-        Main.openCon("product");
-        Document query = new Document("ProductId",ProductId.getText()).append("ProductName", ProductName.getText());
+        Main.openCon("shop");
+        Document query = new Document("ShopId",ShopId.getText());
         Document value = Main.collection.find(query).first();
         if(value == null)
         {
             try
             {
-                query.append("CostPrice",Integer.parseInt(CostPrice.getText())).append("SellingPrice",Integer.parseInt(SellingPrice.getText())).append("Description",Description.getText()).append("ManagerName",manager.getText());
+                query.append("Location",Location.getText()).append("City", City.getText()).append("State",State.getText()).append("Pincode",Integer.parseInt(Pincode.getText())).append("ManagerName",manager.getText());
                 Main.collection.insertOne(query);
-                ManagerProduct.sendmessage = "** Product Added Successfully **";
-                Main.setRoot("ManagerProduct");
+                ManagerShop.sendmessage = "** Shop Added Successfully **";
+                Main.setRoot("ManagerShop");
             }
             catch(Exception e)
             {
-                ErrorMessage.setText("** Enter Prices in Integer Only **");
+                ErrorMessage.setText("** Enter Pincode in Integer Only **");
                 ErrorMessage.setVisible(true);
             }
             finally
@@ -76,16 +75,16 @@ public class ManagerProductAdd {
         }
         else
         {
-            ErrorMessage.setText("** Product of this Id already exists **");
+            ErrorMessage.setText("** Shop of this Id already exists **");
             ErrorMessage.setVisible(true);
         }
     }
-    @FXML void ClearClicked()
+    @FXML void ClearClicked() throws Exception
     {
-        ProductId.clear();
-        ProductName.clear();
-        CostPrice.clear();
-        SellingPrice.clear();
-        Description.clear();
+        ShopId.clear();
+        Location.clear();
+        City.clear();
+        State.clear();
+        Pincode.clear();
     }
 }

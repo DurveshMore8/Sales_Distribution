@@ -1,6 +1,5 @@
 package sadms.java;
 import org.bson.Document;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -14,11 +13,11 @@ public class EmployeeLogin
     @FXML TextField tfEmployeePassword;
     @FXML Label ErrorMessage;
 
-    @FXML void gotoManager(ActionEvent event) throws Exception
+    @FXML void gotoManager() throws Exception
     {
         Main.setRoot("ManagerLogin");
     }
-    @FXML void LogInClicked(ActionEvent event) throws Exception
+    @FXML void LogInClicked() throws Exception
     {
         Main.openCon("employeelogin");
         Document query = new Document("EmployeeName",tfEmployeeName.getText()).append("EmployeePassword",tfEmployeePassword.getText());
@@ -34,7 +33,7 @@ public class EmployeeLogin
             Main.setRoot("EmployeeDashboard");
         }
     }
-    @FXML void ClearClicked(ActionEvent event) throws Exception
+    @FXML void ClearClicked() throws Exception
     {
         tfEmployeeName.clear();
         tfEmployeePassword.clear();

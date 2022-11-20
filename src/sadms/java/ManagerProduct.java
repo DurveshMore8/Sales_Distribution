@@ -1,8 +1,5 @@
 package sadms.java;
-
 import org.bson.Document;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,8 +12,7 @@ public class ManagerProduct {
     @FXML Label manager, ErrorMessage;
     @FXML TextField ProductId, ProductName, SellingPrice, CostPrice, Description;
     @FXML Button AddProduct, UpdateProduct, DeleteProduct;
-    static String sendProductId;
-    static String sendmessage;
+    static String sendProductId, sendmessage;
     public void initialize()
     {
         ErrorMessage.setVisible(false);
@@ -28,33 +24,33 @@ public class ManagerProduct {
             sendmessage = "";
         }
     }
-    @FXML void Log_Out(ActionEvent event) throws Exception
+    @FXML void Log_Out() throws Exception
     {
         Main.setRoot("ManagerLogin");
     }
-    @FXML void ShopClicked(ActionEvent event) throws Exception
+    @FXML void ShopClicked() throws Exception
     {
         Main.setRoot("ManagerShop");
     }
-    @FXML void EmployeeClicked(ActionEvent event) throws Exception
+    @FXML void EmployeeClicked() throws Exception
     {
         Main.setRoot("ManagerEmployee");
     }
-    @FXML void SalesClicked(ActionEvent event) throws Exception
+    @FXML void SalesClicked() throws Exception
     {
         Main.setRoot("ManagerSales");
     }
-    @FXML void StockClicked(ActionEvent event) throws Exception
+    @FXML void StockClicked() throws Exception
     {
         Main.setRoot("ManagerStock");
     }
-    @FXML void ChartGraphClicked(ActionEvent event) throws Exception
+    @FXML void ChartGraphClicked() throws Exception
     {
         Main.setRoot("ManagerChartGraph");
     }
 
     //Retrive data from database
-    @FXML void ProductIdEntered(ActionEvent event) throws Exception
+    @FXML void ProductIdEntered() throws Exception
     {
         Main.openCon("product");
         Document query = new Document("ProductId", ProductId.getText());
@@ -83,26 +79,25 @@ public class ManagerProduct {
     }
 
     //Add product to database
-    @FXML void AddProductClicked(ActionEvent event) throws Exception
+    @FXML void AddProductClicked() throws Exception
     {
         Main.setRoot("ManagerProductAdd");
     }
     //Update product to database
-    @FXML void UpdateProductClicked(ActionEvent event) throws Exception
+    @FXML void UpdateProductClicked() throws Exception
     {
         Main.setRoot("ManagerProductUpdate");
     }
     //Delete product to database
-    @FXML void DeleteProductClicked(ActionEvent evetn) throws Exception
+    @FXML void DeleteProductClicked() throws Exception
     {
         Main.openCon("product");
         Document query = new Document("ProductId",ProductId.getText());
         Main.collection.deleteOne(query);
         Details.setVisible(false);
-        ErrorMessage.setText("** Product Deleted **");
-        UpdateProduct.setDisable(true);;
+        ErrorMessage.setText("** Product Deleted Successfully **");
+        UpdateProduct.setDisable(true);
         DeleteProduct.setDisable(true);
-        AddProduct.setVisible(true);
         ProductId.setText("");
         ErrorMessage.setVisible(true);
         Main.closeCon();

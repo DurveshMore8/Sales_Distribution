@@ -1,6 +1,4 @@
 package sadms.java;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -17,11 +15,11 @@ public class ManagerLogin
     @FXML Label ErrorMessage;
     static Document value;
 
-    @FXML void gotoEmployee(ActionEvent event) throws Exception
+    @FXML void gotoEmployee() throws Exception
     {
         Main.setRoot("EmployeeLogin");
     }
-    @FXML  void LogInClicked(ActionEvent event) throws Exception
+    @FXML  void LogInClicked() throws Exception
     {
         Main.openCon("managerlogin");
 
@@ -38,7 +36,7 @@ public class ManagerLogin
             Main.setRoot("ManagerDashboard");
         }
     }
-    @FXML void ClearClicked(ActionEvent event)
+    @FXML void ClearClicked()
     {
         tfManagerName.clear();
         tfManagerGmail.clear();

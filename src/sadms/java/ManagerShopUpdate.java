@@ -7,21 +7,21 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sadms.Main;
 
-public class ManagerProductUpdate {
+public class ManagerShopUpdate {
     @FXML Label manager,ErrorMessage;
-    @FXML TextField ProductId, ProductName, CostPrice, SellingPrice, Description;
+    @FXML TextField ShopId, Location, City, State, Pincode;
 
     public void initialize()
     {
         manager.setText(ManagerLogin.value.getString("ManagerName"));
-        Main.openCon("product");
-        Document query = new Document("ProductId",ManagerProduct.sendProductId);
+        Main.openCon("shop");
+        Document query = new Document("ShopId",ManagerShop.sendShopId);
         Document value = Main.collection.find(query).first();
-        ProductId.setText(value.getString("ProductId"));
-        ProductName.setText(value.getString("ProductName"));
-        CostPrice.setText(value.getInteger("CostPrice").toString());
-        SellingPrice.setText(value.getInteger("SellingPrice").toString());
-        Description.setText(value.getString("Description"));
+        ShopId.setText(value.getString("ShopId"));
+        Location.setText(value.getString("Location"));
+        City.setText(value.getString("City"));
+        State.setText(value.getString("State"));
+        Pincode.setText(value.getInteger("Pincode").toString());
         Main.closeCon();
     }
     @FXML void Log_Out() throws Exception
@@ -52,10 +52,10 @@ public class ManagerProductUpdate {
     {
         Main.setRoot("ManagerChartGraph");
     }
-    //Add Query
+
     @FXML void UpdateClicked() throws Exception
     {
-        if(CostPrice.getText().equals("") || SellingPrice.getText().equals(""))
+        if(Location.getText().equals("") || City.getText().equals("") || State.getText().equals("") || Pincode.getText().equals(""))
         {
             ErrorMessage.setText("** Fill all Text-Fields **");
             ErrorMessage.setVisible(true);
@@ -63,18 +63,20 @@ public class ManagerProductUpdate {
         else
         {
             ErrorMessage.setVisible(false);
-            Main.openCon("product");
+            Main.openCon("shop");
             try
             {
-                Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("CostPrice",Integer.parseInt(CostPrice.getText())));
-                Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("SellingPrice",Integer.parseInt(SellingPrice.getText())));
-                Main.collection.updateOne(Filters.eq("ProductId",ManagerProduct.sendProductId), Updates.set("ManagerName",manager.getText()));
-                ManagerProduct.sendmessage = "** Product Updated Successfully **";
-                Main.setRoot("ManagerProduct");
+                Main.collection.updateOne(Filters.eq("ShopId",ManagerShop.sendShopId), Updates.set("Location",Location.getText()));
+                Main.collection.updateOne(Filters.eq("ShopId",ManagerShop.sendShopId), Updates.set("City",City.getText()));
+                Main.collection.updateOne(Filters.eq("ShopId",ManagerShop.sendShopId), Updates.set("State",State.getText()));
+                Main.collection.updateOne(Filters.eq("ShopId",ManagerShop.sendShopId), Updates.set("Pincode",Integer.parseInt(Pincode.getText())));
+                Main.collection.updateOne(Filters.eq("ShopId",ManagerShop.sendShopId), Updates.set("ManagerName",manager.getText()));
+                ManagerShop.sendmessage = "** Shop Updated Successfully **";
+                Main.setRoot("ManagerShop");
             }
             catch(Exception e)
             {
-                ErrorMessage.setText("** Enter Prices in Integer Only **");
+                ErrorMessage.setText("** Enter Pincode in Integer Only **");
                 ErrorMessage.setVisible(true);
             }
             finally
@@ -83,9 +85,11 @@ public class ManagerProductUpdate {
             }
         }
     }
-    @FXML void ClearClicked()
+    @FXML void ClearClicked() throws Exception
     {
-        CostPrice.clear();
-        SellingPrice.clear();
+        Location.clear();
+        City.clear();
+        State.clear();
+        Pincode.clear();
     }
 }

@@ -1,6 +1,4 @@
 package sadms.java;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import sadms.Main;
@@ -12,27 +10,27 @@ public class ManagerStock {
     {
         manager.setText(ManagerLogin.value.getString("ManagerName"));
     }
-    @FXML void Log_Out(ActionEvent event) throws Exception
+    @FXML void Log_Out() throws Exception
     {
         Main.setRoot("ManagerLogin");
     }
-    @FXML void ProductClicked(ActionEvent event) throws Exception
+    @FXML void ProductClicked() throws Exception
     {
         Main.setRoot("ManagerProduct");
     }
-    @FXML void ShopClicked(ActionEvent event) throws Exception
+    @FXML void ShopClicked() throws Exception
     {
         Main.setRoot("ManagerShop");
     }
-    @FXML void EmployeeClicked(ActionEvent event) throws Exception
+    @FXML void EmployeeClicked() throws Exception
     {
         Main.setRoot("ManagerEmployee");
     }
-    @FXML void SalesClicked(ActionEvent event) throws Exception
+    @FXML void SalesClicked() throws Exception
     {
         Main.setRoot("ManagerSales");
     }
-    @FXML void ChartGraphClicked(ActionEvent event) throws Exception
+    @FXML void ChartGraphClicked() throws Exception
     {
         Main.setRoot("ManagerChartGraph");
     }
