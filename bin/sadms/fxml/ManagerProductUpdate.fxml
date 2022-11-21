@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="898.0" stylesheets="@../css/ManagerProduct.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.ManagerProductUpdate">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" stylesheets="@../css/ManagerProduct.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.ManagerProductUpdate">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="215.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="550.0" />
@@ -41,10 +41,10 @@
             <Insets top="-50.0" />
          </padding>
       </VBox>
-      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" spacing="50.0" GridPane.columnIndex="1">
+      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" spacing="60.0" GridPane.columnIndex="1">
          <children>
             <Label fx:id="title" text="Manager: Update Product" />
-            <VBox fx:id="Details" prefHeight="325.0" prefWidth="682.0">
+            <VBox fx:id="Form" prefHeight="325.0" prefWidth="682.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="56.0" prefWidth="682.0" spacing="20.0">
                      <children>

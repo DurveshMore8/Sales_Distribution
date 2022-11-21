@@ -7,7 +7,8 @@
     -fx-text-fill: white;
     -fx-font-family: Utsaah;
     -fx-font-weight: bold;
-    -fx-font-size: 40px;
+    -fx-font-size: 50px;
+    -fx-pref-width: 400px;
     
 }
 .radio-button

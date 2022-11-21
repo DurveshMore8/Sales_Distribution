@@ -44,7 +44,7 @@
       <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" spacing="50.0" GridPane.columnIndex="1">
          <children>
             <Label fx:id="title" text="Manager: Add Shop" />
-            <VBox fx:id="Details" prefHeight="325.0" prefWidth="682.0">
+            <VBox fx:id="Form" prefHeight="325.0" prefWidth="682.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="56.0" prefWidth="682.0" spacing="20.0">
                      <children>

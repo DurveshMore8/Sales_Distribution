@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="922.0" spacing="20.0" stylesheets="@../css/EmployeeLogin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.EmployeeLogin">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1000.0" spacing="25.0" stylesheets="@../css/EmployeeLogin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.EmployeeLogin">
    <children>
       <VBox alignment="CENTER" prefHeight="226.0" prefWidth="922.0" spacing="15.0">
          <children>
-            <Label id="title" text="The Employee: Login" />
+            <Label id="title" alignment="CENTER" text="The Employee: Login" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
                <children>
                   <RadioButton id="rbManager" fx:id="rbManager" mnemonicParsing="false" onAction="#gotoManager" prefHeight="46.0" prefWidth="151.0" text="Manager">
@@ -27,7 +27,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox prefHeight="397.0" prefWidth="922.0" spacing="10.0">
+      <VBox prefHeight="397.0" prefWidth="922.0" spacing="50.0">
          <children>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="922.0" spacing="20.0">
                <children>

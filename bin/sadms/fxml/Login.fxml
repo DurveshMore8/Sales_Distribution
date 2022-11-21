@@ -10,7 +10,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="226.0" prefWidth="922.0" spacing="15.0">
          <children>
-            <Label text="Select Type" />
+            <Label alignment="CENTER" text="Select Type" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
                <children>
                   <RadioButton id="rbManager" fx:id="rbManager" mnemonicParsing="false" onAction="#gotoManager" prefHeight="46.0" prefWidth="151.0" text="Manager">
