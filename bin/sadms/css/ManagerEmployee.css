@@ -12,6 +12,7 @@
     -fx-font-family: Yu Gothic;
     -fx-font-size: 16px;
     -fx-background-color: #252525;
+    -fx-pref-width: 220px;
 }
 #title
 {
@@ -30,7 +31,7 @@
 {
     -fx-text-fill: white;
     -fx-font-family: Yu Gothic;
-    -fx-font-size: 24px;
+    -fx-font-size: 16px;
 }
 .button
 {
@@ -38,6 +39,7 @@
     -fx-font-family: Yu Gothic;
     -fx-font-size: 16px;
     -fx-background-color: #7a0bc0;
+    -fx-pref-width: 100px;
 }
 .text-field
 {
@@ -53,4 +55,33 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-background-color: #7a0bc0;
+}
+#Details .label
+{
+    -fx-font-size: 16px;
+    -fx-pref-width: 120px;
+}
+#Details .text-field
+{
+    -fx-font-size: 14px;
+    -fx-pref-width: 200px;
+}
+#ErrorMessage
+{
+    -fx-font-size: 16px;
+}
+#Form .label
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 16px;
+    -fx-pref-width: 200px;
+}
+#Form .text-field
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-background-color: #7a0bc0;
+    -fx-font-size: 16px;
+    -fx-pref-width: 400px;
 }
