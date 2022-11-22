@@ -14,15 +14,15 @@
    <children>
       <VBox alignment="CENTER" prefHeight="226.0" prefWidth="922.0" spacing="15.0">
          <children>
-            <Label id="title" fx:id="title" alignment="CENTER" text="The Manager: Login" />
+            <Label fx:id="title" alignment="CENTER" text="The Manager: Login" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
                <children>
-                  <RadioButton id="rbManager" fx:id="rbManager" mnemonicParsing="false" prefHeight="46.0" prefWidth="151.0" selected="true" text="Manager">
+                  <RadioButton id="rbManager" fx:id="Manager" mnemonicParsing="false" prefHeight="46.0" prefWidth="151.0" selected="true" text="Manager">
                      <toggleGroup>
                         <ToggleGroup fx:id="Type" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton id="rbEmployee" fx:id="rbEmployee" mnemonicParsing="false" onAction="#gotoEmployee" prefHeight="46.0" prefWidth="158.0" text="Employee" toggleGroup="$Type" />
+                  <RadioButton id="rbEmployee" fx:id="Employee" mnemonicParsing="false" onAction="#gotoEmployee" prefHeight="46.0" prefWidth="158.0" text="Employee" toggleGroup="$Type" />
                </children>
             </HBox>
          </children>
@@ -31,20 +31,20 @@
          <children>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="922.0" spacing="20.0">
                <children>
-                  <Label text="Manager Name:" />
-                  <TextField id="tfManagerName" fx:id="tfManagerName" promptText="abc xyz" />
+                  <Label text="ManagerName:" />
+                  <TextField fx:id="ManagerName" promptText="abc xyz" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="922.0" spacing="20.0">
                <children>
-                  <Label text="Manager Gmail:" />
-                  <TextField id="tfManagerGmail" fx:id="tfManagerGmail" promptText="something@gmail.com" />
+                  <Label text="E-mail Id:" />
+                  <TextField fx:id="EmailId" promptText="something@gmail.com" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="922.0" spacing="20.0">
                <children>
-                  <Label text="Manager Password:" />
-                  <PasswordField id="tfManagerPassword" fx:id="tfManagerPassword" promptText="abc1234" />
+                  <Label text="Password:" />
+                  <PasswordField fx:id="Password" promptText="abc1234" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
@@ -55,7 +55,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="922.0">
                <children>
-                  <Label id="ErrorMessage" fx:id="ErrorMessage" />
+                  <Label id="ErrorMessage" fx:id="ErrorMessage" alignment="CENTER" />
                </children>
             </HBox>
          </children>

@@ -20,3 +20,9 @@
     -fx-font-weight: bold;
     -fx-font-size: 50px;   
 }
+.label
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 24px;
+}

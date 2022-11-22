@@ -8,10 +8,8 @@ import sadms.Main;
 
 public class ManagerLogin
 {
-    @FXML RadioButton rbEmployee;
-    @FXML TextField tfManagerName;
-    @FXML TextField tfManagerGmail;
-    @FXML TextField tfManagerPassword;
+    @FXML RadioButton Employee;
+    @FXML TextField ManagerName, EmailId, Password;
     @FXML Label ErrorMessage;
     static Document value;
 
@@ -22,13 +20,12 @@ public class ManagerLogin
     @FXML  void LogInClicked() throws Exception
     {
         Main.openCon("managerlogin");
-
-        Document query = new Document("ManagerName",tfManagerName.getText()).append("ManagerGmail", tfManagerGmail.getText()).append("ManagerPassword", tfManagerPassword.getText());
+        Document query = new Document("ManagerName",ManagerName.getText()).append("EmailId", EmailId.getText()).append("Password", Password.getText());
         value = Main.collection.find(query).first();
         Main.closeCon();
         if(value == null)
         {
-            ErrorMessage.setText("* Wrong Credentials Entered *");
+            ErrorMessage.setText("** Wrong Credentials Entered **");
         }
         else
         {
@@ -38,8 +35,8 @@ public class ManagerLogin
     }
     @FXML void ClearClicked()
     {
-        tfManagerName.clear();
-        tfManagerGmail.clear();
-        tfManagerPassword.clear();
+        ManagerName.clear();
+        EmailId.clear();
+        Password.clear();
     }
 }

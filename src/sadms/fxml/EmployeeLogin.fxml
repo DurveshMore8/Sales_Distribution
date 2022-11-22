@@ -17,12 +17,12 @@
             <Label id="title" alignment="CENTER" text="The Employee: Login" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
                <children>
-                  <RadioButton id="rbManager" fx:id="rbManager" mnemonicParsing="false" onAction="#gotoManager" prefHeight="46.0" prefWidth="151.0" text="Manager">
+                  <RadioButton id="rbManager" fx:id="Manager" mnemonicParsing="false" onAction="#gotoManager" prefHeight="46.0" prefWidth="151.0" text="Manager">
                      <toggleGroup>
                         <ToggleGroup fx:id="Type" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton id="rbEmployee" fx:id="rbEmployee" mnemonicParsing="false" prefHeight="46.0" prefWidth="158.0" selected="true" text="Employee" toggleGroup="$Type" />
+                  <RadioButton id="rbEmployee" mnemonicParsing="false" prefHeight="46.0" prefWidth="158.0" selected="true" text="Employee" toggleGroup="$Type" />
                </children>
             </HBox>
          </children>
@@ -32,13 +32,13 @@
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="922.0" spacing="20.0">
                <children>
                   <Label text="Employee Name:" />
-                  <TextField fx:id="tfEmployeeName" promptText="abc xyz" />
+                  <TextField fx:id="EmployeeName" promptText="abc xyz" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="66.0" prefWidth="922.0" spacing="20.0">
                <children>
-                  <Label text="Employee Password:" />
-                  <PasswordField fx:id="tfEmployeePassword" promptText="abc1234" />
+                  <Label text="Password:" />
+                  <PasswordField fx:id="Password" promptText="abc1234" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
@@ -49,7 +49,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="922.0">
                <children>
-                  <Label id="ErrorMessage" fx:id="ErrorMessage" />
+                  <Label id="ErrorMessage" fx:id="ErrorMessage" alignment="CENTER" />
                </children>
             </HBox>
          </children>

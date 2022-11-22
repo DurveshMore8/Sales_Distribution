@@ -10,6 +10,13 @@
     -fx-font-size: 50px;
     -fx-pref-width: 400px;
 }
+#ErrorMessage
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 24px;
+    -fx-pref-width: 400px; 
+}
 .label
 {
     -fx-text-fill: white;
