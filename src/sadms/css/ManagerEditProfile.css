@@ -14,24 +14,26 @@
     -fx-background-color: #252525;
     -fx-pref-width: 220px;
 }
+#navbar #manager
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 24px;
+}
 #title
 {
     -fx-text-fill: white;
     -fx-font-family: Utsaah;
     -fx-font-weight: bold;
-    -fx-font-size: 50px;   
+    -fx-font-size: 50px;
+    -fx-pref-width: 500px;
 }
 .label
 {
     -fx-text-fill: white;
     -fx-font-family: Yu Gothic;
     -fx-font-size: 24px;
-}
-.radio-button
-{
-    -fx-text-fill: white;
-    -fx-font-family: Yu Gothic;
-    -fx-font-size: 16px;
+    -fx-pref-width: 250px;
 }
 .button
 {
@@ -47,47 +49,19 @@
     -fx-font-family: Yu Gothic;
     -fx-background-color: #7a0bc0;
     -fx-font-size: 16px;
-}
-#navbar #managerbtn
-{
-    -fx-text-fill: white;
-    -fx-font-family: Yu Gothic;
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-    -fx-background-color: #7a0bc0;
-}
-#Details .label
-{
-    -fx-font-size: 16px;
-    -fx-pref-width: 150px;
-}
-#Details .text-field
-{
-    -fx-font-size: 14px;
     -fx-pref-width: 300px;
 }
 #ErrorMessage
 {
-    -fx-font-size: 16px;
-}
-#Form .label
-{
     -fx-text-fill: white;
     -fx-font-family: Yu Gothic;
-    -fx-font-size: 18px;
-    -fx-pref-width: 150px;
-}
-#Form .text-field
-{
-    -fx-text-fill: white;
-    -fx-font-family: Yu Gothic;
-    -fx-background-color: #7a0bc0;
     -fx-font-size: 16px;
-    -fx-pref-width: 400px;
+    -fx-pref-width: 1000px;
 }
 #navbar #EditProfile
 {
     -fx-text-fill: white;
     -fx-font-family: Yu Gothic;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
 }
