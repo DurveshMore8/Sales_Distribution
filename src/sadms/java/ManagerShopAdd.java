@@ -17,6 +17,18 @@ public class ManagerShopAdd {
     {
         Main.setRoot("ManagerLogin");
     }
+    @FXML void EditProfileClicked() throws Exception
+    {
+        Main.setRoot("ManagerEditProfile");
+    }
+    @FXML void DashboardClicked() throws Exception
+    {
+        Main.setRoot("ManagerDashboard");
+    }
+    @FXML void ManagerClicked() throws Exception
+    {
+        Main.setRoot("ManagerManager");
+    }
     @FXML void ProductClicked() throws Exception
     {
         Main.setRoot("ManagerProduct");

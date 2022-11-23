@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -21,28 +22,6 @@
       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <VBox fx:id="navbar" alignment="CENTER" prefHeight="544.0" prefWidth="220.0" spacing="120.0">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <children>
-            <Label id="manager" fx:id="manager" />
-            <VBox alignment="CENTER" prefHeight="350.0" prefWidth="215.0">
-               <children>
-                  <Button id="productbtn" mnemonicParsing="false" onAction="#ProductClicked" prefHeight="50.0" prefWidth="220.0" text="Product" />
-                  <Button mnemonicParsing="false" onAction="#ShopClicked" prefHeight="50.0" prefWidth="220.0" text="Shop" />
-                  <Button fx:id="employeebtn" mnemonicParsing="false" onAction="#EmployeeClicked" prefHeight="50.0" prefWidth="220.0" text="Employee" />
-                  <Button mnemonicParsing="false" onAction="#SalesClicked" prefHeight="50.0" prefWidth="220.0" text="Sales" />
-                  <Button mnemonicParsing="false" onAction="#StockClicked" prefHeight="50.0" prefWidth="220.0" text="Stock" />
-                  <Button mnemonicParsing="false" onAction="#ChartGraphClicked" prefHeight="50.0" prefWidth="220.0" text="Chart and Graph" />
-                  <Button mnemonicParsing="false" onAction="#Log_Out" prefHeight="50.0" prefWidth="215.0" text="Log Out" />
-               </children>
-            </VBox>
-         </children>
-         <padding>
-            <Insets top="-50.0" />
-         </padding>
-      </VBox>
       <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" spacing="50.0" GridPane.columnIndex="1">
          <children>
             <Label fx:id="title" text="Manager: Add Employee" />
@@ -118,6 +97,28 @@
          <padding>
             <Insets top="10.0" />
          </padding>
+      </VBox>
+      <VBox fx:id="navbar" alignment="CENTER" prefHeight="544.0" prefWidth="220.0" spacing="50.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Label id="manager" fx:id="manager" />
+            <Hyperlink fx:id="EditProfile" onAction="#EditProfileClicked" text="Edit Profile" />
+            <VBox alignment="CENTER" prefHeight="450.0" prefWidth="215.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#DashboardClicked" prefHeight="50.0" prefWidth="220.0" text="Dashboard" />
+                  <Button mnemonicParsing="false" onAction="#ManagerClicked" prefHeight="50.0" prefWidth="220.0" text="Manager" />
+                  <Button mnemonicParsing="false" onAction="#ProductClicked" prefHeight="50.0" prefWidth="220.0" text="Product" />
+                  <Button mnemonicParsing="false" onAction="#ShopClicked" prefHeight="50.0" prefWidth="220.0" text="Shop" />
+                  <Button fx:id="employeebtn" mnemonicParsing="false" onAction="#EmployeeClicked" prefHeight="50.0" prefWidth="220.0" text="Employee" />
+                  <Button mnemonicParsing="false" onAction="#SalesClicked" prefHeight="50.0" prefWidth="220.0" text="Sales" />
+                  <Button mnemonicParsing="false" onAction="#StockClicked" prefHeight="50.0" prefWidth="220.0" text="Stock" />
+                  <Button mnemonicParsing="false" onAction="#ChartGraphClicked" prefHeight="50.0" prefWidth="220.0" text="Chart and Graph" />
+                  <Button mnemonicParsing="false" onAction="#Log_Out" prefHeight="50.0" prefWidth="215.0" text="Log Out" />
+               </children>
+            </VBox>
+         </children>
       </VBox>
    </children>
 </GridPane>

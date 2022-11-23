@@ -2,13 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="848.0" stylesheets="@../css/ManagerSales.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.ManagerSales">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../css/ManagerSales.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sadms.java.ManagerSales">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="215.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="550.0" />
@@ -17,14 +18,25 @@
       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <VBox fx:id="navbar" alignment="CENTER" prefHeight="544.0" prefWidth="220.0" spacing="120.0">
+      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" GridPane.columnIndex="1">
+         <children>
+            <Label fx:id="title" text="Manager: Sales" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="navbar" alignment="CENTER" prefHeight="544.0" prefWidth="220.0" spacing="50.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
             <Label id="manager" fx:id="manager" />
-            <VBox alignment="CENTER" prefHeight="350.0" prefWidth="215.0">
+            <Hyperlink fx:id="EditProfile" onAction="#EditProfileClicked" text="Edit Profile" />
+            <VBox alignment="CENTER" prefHeight="450.0" prefWidth="215.0">
                <children>
+                  <Button mnemonicParsing="false" onAction="#DashboardClicked" prefHeight="50.0" prefWidth="220.0" text="Dashboard" />
+                  <Button mnemonicParsing="false" onAction="#ManagerClicked" prefHeight="50.0" prefWidth="220.0" text="Manager" />
                   <Button mnemonicParsing="false" onAction="#ProductClicked" prefHeight="50.0" prefWidth="220.0" text="Product" />
                   <Button mnemonicParsing="false" onAction="#ShopClicked" prefHeight="50.0" prefWidth="220.0" text="Shop" />
                   <Button mnemonicParsing="false" onAction="#EmployeeClicked" prefHeight="50.0" prefWidth="220.0" text="Employee" />
@@ -35,17 +47,6 @@
                </children>
             </VBox>
          </children>
-         <padding>
-            <Insets top="-50.0" />
-         </padding>
-      </VBox>
-      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" GridPane.columnIndex="1">
-         <children>
-            <Label fx:id="title" text="Manager: Sales" />
-         </children>
-         <padding>
-            <Insets top="10.0" />
-         </padding>
       </VBox>
    </children>
 </GridPane>

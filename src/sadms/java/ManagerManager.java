@@ -3,7 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import sadms.Main;
 
-public class ManagerDashboard {
+public class ManagerManager {
     @FXML Label manager;
 
     public void initialize()
@@ -18,9 +18,9 @@ public class ManagerDashboard {
     {
         Main.setRoot("ManagerEditProfile");
     }
-    @FXML void ManagerClicked() throws Exception
+    @FXML void DashboardClicked() throws Exception
     {
-        Main.setRoot("ManagerManager");
+        Main.setRoot("ManagerDashboard");
     }
     @FXML void ProductClicked() throws Exception
     {

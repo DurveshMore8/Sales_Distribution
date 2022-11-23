@@ -18,7 +18,7 @@
     -fx-text-fill: white;
     -fx-font-family: Utsaah;
     -fx-font-weight: bold;
-    -fx-font-size: 40px;   
+    -fx-font-size: 50px;   
 }
 .label
 {
@@ -53,4 +53,10 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-background-color: #7a0bc0;
+}
+#navbar #EditProfile
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 12px;
 }

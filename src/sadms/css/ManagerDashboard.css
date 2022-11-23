@@ -26,3 +26,17 @@
     -fx-font-family: Yu Gothic;
     -fx-font-size: 24px;
 }
+#navbar #EditProfile
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 12px;
+}
+#navbar #dashboardbtn
+{
+    -fx-text-fill: white;
+    -fx-font-family: Yu Gothic;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: #7a0bc0;
+}
