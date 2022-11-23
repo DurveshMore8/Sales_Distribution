@@ -13,7 +13,7 @@ import sadms.Main;
 
 public class ManagerEmployeeUpdate {
     @FXML Label manager,ErrorMessage;
-    @FXML TextField EmployeeId, Name, EmployeeName, DateofBirth, Phone, GmailId;
+    @FXML TextField EmployeeId, Name, DateofBirth, Phone, EmailId;
     @FXML RadioButton Male, Female;
     @FXML ToggleGroup Gender;
 
@@ -25,12 +25,11 @@ public class ManagerEmployeeUpdate {
         Document value = Main.collection.find(query).first();
         EmployeeId.setText(value.getString("EmployeeId"));
         Name.setText(value.getString("Name"));
-        EmployeeName.setText(value.getString("EmployeeName"));
         if(value.getString("Gender").equals(Male.getText())) Male.setSelected(true);
         else Female.setSelected(true);
         DateofBirth.setText(value.getString("DateofBirth"));
         Phone.setText(value.getString("Phone"));
-        GmailId.setText(value.getString("GmailId"));
+        EmailId.setText(value.getString("EmailId"));
         Main.closeCon();
     }
     @FXML void Log_Out() throws Exception
@@ -76,7 +75,7 @@ public class ManagerEmployeeUpdate {
 
     @FXML void UpdateClicked() throws Exception
     {
-        if(Name.getText().equals("") || EmployeeName.getText().equals("") || (RadioButton) Gender.getSelectedToggle() == null || DateofBirth.getText().equals("") || Phone.getText().equals("") || GmailId.getText().equals(""))
+        if(Name.getText().equals("") || (RadioButton) Gender.getSelectedToggle() == null || DateofBirth.getText().equals("") || Phone.getText().equals("") || EmailId.getText().equals(""))
         {
             ErrorMessage.setText("** Fill all Text-Fields **");
             ErrorMessage.setVisible(true);
@@ -88,16 +87,12 @@ public class ManagerEmployeeUpdate {
             try
             {
                 Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("Name",Name.getText()));
-                Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("EmployeeName",EmployeeName.getText()));
                 Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("Gender", ((RadioButton) Gender.getSelectedToggle()).getText()));
                 Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("DateofBirth",DateofBirth.getText()));
                 Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("Age", Period.between(LocalDate.parse(DateofBirth.getText()), LocalDate.now()).getYears()));
                 Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("Phone",Phone.getText()));
-                Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("GmailId",GmailId.getText()));
-                Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("ManagerName",manager.getText()));
-                Main.closeCon();
-                Main.openCon("employeelogin");
-                Main.collection.updateOne(Filters.eq("EmployeeName",ManagerEmployee.sendEmployeeName), Updates.set("EmployeeName",EmployeeName.getText()));
+                Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("EmailId",EmailId.getText()));
+                Main.collection.updateOne(Filters.eq("EmployeeId",ManagerEmployee.sendEmployeeId), Updates.set("UpdatedBy",manager.getText()));
                 ManagerEmployee.sendmessage = "** Employee Updated Successfully **";
                 Main.setRoot("ManagerEmployee");
             }
@@ -115,10 +110,9 @@ public class ManagerEmployeeUpdate {
     @FXML void ClearClicked() throws Exception
     {
         Name.clear();
-        EmployeeName.clear();
         ((RadioButton) Gender.getSelectedToggle()).setSelected(false);
         DateofBirth.clear();
         Phone.clear();
-        GmailId.clear();
+        EmailId.clear();
     }
 }

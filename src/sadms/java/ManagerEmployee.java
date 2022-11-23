@@ -10,13 +10,14 @@ import sadms.Main;
 public class ManagerEmployee {
     @FXML GridPane Details;
     @FXML Label manager, ErrorMessage;
-    @FXML TextField EmployeeId, Name, EmployeeName, DateofBirth, Age, Phone, GmailId;
+    @FXML TextField EmployeeId, Name, Gender, DateofBirth, Age, Phone, EmailId, EmployeeName;
     @FXML Button AddEmployee, UpdateEmployee, DeleteEmployee;
     static String sendEmployeeId, sendEmployeeName, sendmessage;
 
     public void initialize()
     {
         manager.setText(ManagerLogin.value.getString("ManagerName"));
+        Details.setVisible(false);
         ErrorMessage.setVisible(false);
         if(sendmessage != "")
         {
@@ -80,11 +81,12 @@ public class ManagerEmployee {
             Details.setVisible(true);
             ErrorMessage.setVisible(false);
             Name.setText(value.getString("Name"));
-            EmployeeName.setText(value.getString("EmployeeName"));
+            Gender.setText(value.getString("Gender"));
             DateofBirth.setText(value.getString("DateofBirth"));
             Age.setText(value.getInteger("Age").toString());
             Phone.setText(value.getString("Phone"));
-            GmailId.setText(value.getString("GmailId"));
+            EmailId.setText(value.getString("EmailId"));
+            EmployeeName.setText(value.getString("EmployeeName"));
             UpdateEmployee.setDisable(false);
             DeleteEmployee.setDisable(false);
             sendEmployeeId = EmployeeId.getText();

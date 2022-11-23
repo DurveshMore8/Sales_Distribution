@@ -92,7 +92,7 @@ public class ManagerManagerUpdate {
                 Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("Age", Period.between(LocalDate.parse(DateofBirth.getText()), LocalDate.now()).getYears()));
                 Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("Phone",Phone.getText()));
                 Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("EmailId",EmailId.getText()));
-                Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("AddedBy",manager.getText()));
+                Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("UpdatedBy",manager.getText()));
                 ManagerManager.sendmessage = "** Manager Updated Successfully **";
                 Main.setRoot("ManagerManager");
             }

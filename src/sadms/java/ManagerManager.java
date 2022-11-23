@@ -12,8 +12,7 @@ public class ManagerManager {
     @FXML TextField ManagerId, Name, Gender, DateofBirth, Age, Phone, EmailId, ManagerName;
     @FXML GridPane Details;
     @FXML Button AddManager, UpdateManager, DeleteManager;
-    static String sendManagerId, sendManagerName;
-    public static String sendmessage;
+    static String sendManagerId, sendManagerName, sendmessage;
 
     public void initialize()
     {

@@ -11,7 +11,7 @@ import sadms.Main;
 
 public class ManagerEmployeeAdd {
     @FXML Label manager,ErrorMessage;
-    @FXML TextField EmployeeId, Name, EmployeeName, DateofBirth, Phone, GmailId;
+    @FXML TextField EmployeeId, Name, DateofBirth, Phone, EmailId;
     @FXML ToggleGroup Gender;
 
     public void initialize()
@@ -62,7 +62,7 @@ public class ManagerEmployeeAdd {
     @FXML void AddClicked() throws Exception
     {
         ErrorMessage.setVisible(false);
-        if(EmployeeId.getText().equals("") || Name.getText().equals("") || EmployeeName.getText().equals("") || DateofBirth.getText().equals("") || Phone.getText().equals("") || GmailId.getText().equals(""))
+        if(EmployeeId.getText().equals("") || Name.getText().equals("") || DateofBirth.getText().equals("") || Phone.getText().equals("") || EmailId.getText().equals(""))
         {
             ErrorMessage.setText("** Fill all Text-Fields **");
             ErrorMessage.setVisible(true);
@@ -75,21 +75,19 @@ public class ManagerEmployeeAdd {
         {
             try
             {
-                
-                query.append("Name",Name.getText()).append("EmployeeName", EmployeeName.getText()).append("Gender", ((RadioButton) Gender.getSelectedToggle()).getText()).append("DateofBirth",DateofBirth.getText()).append("Age", Period.between(LocalDate.parse(DateofBirth.getText()), LocalDate.now()).getYears()).append("Phone",Phone.getText()).append("GmailId",GmailId.getText()).append("ManagerName",manager.getText());
+                query.append("Name",Name.getText()).append("Gender", ((RadioButton) Gender.getSelectedToggle()).getText()).append("DateofBirth",DateofBirth.getText()).append("Age", Period.between(LocalDate.parse(DateofBirth.getText()), LocalDate.now()).getYears()).append("Phone",Phone.getText()).append("EmailId",EmailId.getText()).append("EmployeeName",Name.getText().replaceAll(" ","")).append("AddedBy",manager.getText());
                 Main.collection.insertOne(query);
                 ManagerEmployee.sendmessage = "** Employee Added Successfully **";
                 Main.closeCon();
                 Main.openCon("employeelogin");
-                query = new Document("EmployeeName",EmployeeName.getText()).append("Password",EmployeeName.getText());
+                query = new Document("EmployeeName",Name.getText().replaceAll(" ","")).append("Password",Name.getText().replaceAll(" ",""));
                 Main.collection.insertOne(query);
                 Main.setRoot("ManagerEmployee");
             }
             catch(Exception e)
             {
-                ErrorMessage.setText("** Enter Date in Proper Format **");
+                ErrorMessage.setText("** Fill all Text-Fields Properly **");
                 ErrorMessage.setVisible(true);
-                e.printStackTrace();
             }
             finally
             {
@@ -106,10 +104,9 @@ public class ManagerEmployeeAdd {
     {
         EmployeeId.clear();
         Name.clear();
-        EmployeeName.clear();
         ((RadioButton) Gender.getSelectedToggle()).setSelected(false);
         DateofBirth.clear();
         Phone.clear();
-        GmailId.clear();
+        EmailId.clear();
     }
 }
