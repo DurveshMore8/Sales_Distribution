@@ -113,6 +113,19 @@ public class ManagerManager {
     }
     @FXML void DeleteManagerClicked() throws Exception
     {
-
+        Main.openCon("managerdata");
+        Document query = new Document("ManagerId",ManagerId.getText());
+        Main.collection.deleteOne(query);
+        Main.closeCon();
+        Main.openCon("managerlogin");
+        query = new Document("ManagerName",ManagerName.getText());
+        Main.collection.deleteOne(query);
+        Main.closeCon();
+        Details.setVisible(false);
+        ErrorMessage.setText("** Manager Deleted Successfully **");
+        UpdateManager.setDisable(true);
+        DeleteManager.setDisable(true);
+        ManagerId.setText("");
+        ErrorMessage.setVisible(true);
     }
 }
