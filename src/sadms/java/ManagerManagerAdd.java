@@ -83,12 +83,15 @@ public class ManagerManagerAdd {
                 query = new Document("ManagerName", Name.getText().replaceAll(" ", "")).append("EmailId", EmailId.getText()).append("Password", Name.getText().replaceAll(" ", ""));
                 Main.collection.insertOne(query);
                 Main.setRoot("ManagerManager");
-                Main.closeCon();
             }
             catch(Exception e)
             {
                 ErrorMessage.setText("** Fill all Text-Fields Properly **");
                 ErrorMessage.setVisible(true);
+            }
+            finally
+            {
+                Main.closeCon();
             }
         }
         else
