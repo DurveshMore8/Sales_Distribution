@@ -93,6 +93,9 @@ public class ManagerManagerUpdate {
                 Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("Phone",Phone.getText()));
                 Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("EmailId",EmailId.getText()));
                 Main.collection.updateOne(Filters.eq("ManagerId",ManagerManager.sendManagerId), Updates.set("UpdatedBy",manager.getText()));
+                Main.closeCon();
+                Main.openCon("managerlogin");
+                Main.collection.updateOne(Filters.eq("ManagerName",ManagerManager.sendManagerName), Updates.set("EmailId",EmailId.getText()));
                 ManagerManager.sendmessage = "** Manager Updated Successfully **";
                 Main.setRoot("ManagerManager");
             }
@@ -100,6 +103,7 @@ public class ManagerManagerUpdate {
             {
                 ErrorMessage.setText("** Fill all Text-Fields Properly **");
                 ErrorMessage.setVisible(true);
+                e.printStackTrace();
             }
             finally
             {

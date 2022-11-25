@@ -71,8 +71,11 @@ public class ManagerEditProfile {
             Document value = Main.collection.find(query).first();
             if(value == null || value.getString("ManagerName").equals(ManagerName.getText()))
             {
+                Main.collection.updateOne(Filters.eq("ManagerName",manager.getText()), Updates.set("Password",EnterPassword.getText()));
                 Main.collection.updateOne(Filters.eq("ManagerName",manager.getText()), Updates.set("ManagerName",ManagerName.getText()));
-                Main.collection.updateOne(Filters.eq("ManagerName",manager.getText()),Updates.set("Password",EnterPassword.getText()));
+                Main.closeCon();
+                Main.openCon("managerdata");
+                Main.collection.updateOne(Filters.eq("ManagerName",manager.getText()), Updates.set("ManagerName",ManagerName.getText()));
                 ErrorMessage.setText("** Credentials Updated Successfully **");
             }
             else
