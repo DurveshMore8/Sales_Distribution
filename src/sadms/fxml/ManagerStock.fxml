@@ -18,7 +18,7 @@
       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" GridPane.columnIndex="1">
+      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="650.0" spacing="10.0" GridPane.columnIndex="1">
          <children>
             <Label fx:id="title" text="Manager: Stock" />
          </children>
