@@ -3,10 +3,10 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Java\\javafx-sdk-20\\lib\\javafx.base.jar",
-        "c:\\Java\\javafx-sdk-20\\lib\\javafx.controls.jar",
-        "c:\\Java\\javafx-sdk-20\\lib\\javafx.fxml.jar",
-        "c:\\Java\\javafx-sdk-20\\lib\\javafx.graphics.jar",
+        "c:\\Java\\javafx-sdk-19\\lib\\javafx.base.jar",
+        "c:\\Java\\javafx-sdk-19\\lib\\javafx.controls.jar",
+        "c:\\Java\\javafx-sdk-19\\lib\\javafx.fxml.jar",
+        "c:\\Java\\javafx-sdk-19\\lib\\javafx.graphics.jar",
         "d:\\JarFiles\\mongo-java-driver-3.12.11.jar"
     ]
 }
